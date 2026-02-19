@@ -1,1 +1,38 @@
-<p>calendar works!</p>
+<section class="calendar-panel">
+  <div class="calendar-head">
+    <h2>Available Interview Slots</h2>
+    <p>Filter by date and status to find the right schedule fast.</p>
+  </div>
+
+  <div class="filter-grid">
+    <div>
+      <label class="form-label">Date</label>
+      <input type="date" [(ngModel)]="selectedDate" class="form-control form-control-lg">
+    </div>
+
+    <div>
+      <label class="form-label">Status</label>
+      <select [(ngModel)]="selectedStatus" class="form-select form-select-lg">
+        <option value="">All Status</option>
+        <option>BOOKED</option>
+        <option>AVAILABLE</option>
+        <option>CANCELLED</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="booking-grid" *ngIf="filteredBookings().length; else emptyState">
+    <article class="booking-card" *ngFor="let booking of filteredBookings()">
+      <h6>{{ booking.interviewer.name }}</h6>
+      <p>{{ booking.startTime | date:'medium' }}</p>
+      <span [class]="getStatusClass(booking.status)">{{ booking.status }}</span>
+    </article>
+  </div>
+
+  <ng-template #emptyState>
+    <div class="empty-card">
+      <h6>No slots found</h6>
+      <p>Try changing date or status filters.</p>
+    </div>
+  </ng-template>
+</section>

@@ -1,0 +1,162 @@
+.calendar-panel {
+  background: linear-gradient(165deg, rgba(255, 255, 255, 0.98), rgba(248, 252, 255, 0.95));
+  border: 1px solid #cddffd;
+  border-radius: 24px;
+  box-shadow: 0 20px 42px rgba(18, 78, 170, 0.12);
+  padding: clamp(1.2rem, 3vw, 2rem);
+  position: relative;
+  overflow: hidden;
+}
+
+.calendar-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(57, 131, 255, 0.08), transparent 48%);
+  pointer-events: none;
+}
+
+.calendar-head h2 {
+  color: #0a4ab9;
+  font-size: clamp(1.25rem, 2.4vw, 2rem);
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  margin: 0;
+  position: relative;
+}
+
+.calendar-head p {
+  color: #4d5f82;
+  font-size: 1.07rem;
+  margin: 0.45rem 0 0;
+  position: relative;
+}
+
+.filter-grid {
+  display: grid;
+  gap: 1.1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 1.35rem;
+  position: relative;
+}
+
+.filter-grid .form-label {
+  color: #223557;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.filter-grid .form-control,
+.filter-grid .form-select {
+  background: #ffffff;
+  border: 1px solid #b7cff9;
+  border-radius: 14px;
+  color: #1d2b46;
+  min-height: 56px;
+  font-weight: 500;
+}
+
+.filter-grid .form-control:focus,
+.filter-grid .form-select:focus {
+  border-color: #216ceb;
+  box-shadow: 0 0 0 0.22rem rgba(33, 108, 235, 0.18);
+}
+
+.booking-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 1.55rem;
+  position: relative;
+}
+
+.booking-card {
+  background: linear-gradient(160deg, #f8fbff, #edf4ff 58%, #e7f1ff);
+  border: 1px solid #c9dcff;
+  border-radius: 16px;
+  padding: 1.05rem;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.booking-card:hover {
+  box-shadow: 0 14px 28px rgba(18, 88, 191, 0.16);
+  transform: translateY(-2px);
+}
+
+.booking-card h6 {
+  color: #123f93;
+  font-size: 1.04rem;
+  font-weight: 700;
+  margin: 0 0 0.45rem;
+}
+
+.booking-card p {
+  color: #4a5f84;
+  margin-bottom: 0.72rem;
+}
+
+.empty-card {
+  background: linear-gradient(165deg, rgba(246, 250, 255, 0.94), rgba(239, 246, 255, 0.94));
+  border: 1px dashed #9fc1fb;
+  border-radius: 14px;
+  margin-top: 1.55rem;
+  padding: 1.35rem;
+  text-align: center;
+  position: relative;
+}
+
+.empty-card h6 {
+  color: #174ea9;
+  font-size: 1.9rem;
+  margin: 0 0 0.25rem;
+}
+
+.empty-card p {
+  color: #586d92;
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  padding: 0.28rem 0.7rem;
+}
+
+.status-pill.is-booked {
+  background: #ffe5ea;
+  color: #c1254d;
+}
+
+.status-pill.is-available {
+  background: #dff8ec;
+  color: #137345;
+}
+
+.status-pill.is-cancelled {
+  background: #eceff5;
+  color: #55637f;
+}
+
+@media (max-width: 767.98px) {
+  .filter-grid,
+  .booking-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .calendar-panel {
+    border-radius: 18px;
+  }
+
+  .calendar-head p {
+    font-size: 1rem;
+  }
+
+  .empty-card h6 {
+    font-size: 1.5rem;
+  }
+}

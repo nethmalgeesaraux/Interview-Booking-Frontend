@@ -1,0 +1,11 @@
+.booking-area {
+  background:
+    radial-gradient(circle at 12% 6%, rgba(122, 185, 255, 0.26), transparent 28%),
+    radial-gradient(circle at 86% 18%, rgba(62, 123, 255, 0.22), transparent 24%),
+    linear-gradient(180deg, #eef4ff 0%, #f8fbff 100%);
+  padding: clamp(2rem, 4.8vw, 4.4rem) 0;
+}
+
+.booking-area .container {
+  max-width: 1220px;
+}

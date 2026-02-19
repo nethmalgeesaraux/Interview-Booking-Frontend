@@ -1,1 +1,21 @@
-<p>booking-modal works!</p>
+<section class="booking-form-card">
+  <h3>Quick Booking</h3>
+  <p>Create a new interview slot in seconds.</p>
+
+  <div class="mb-3">
+    <label class="form-label">Candidate ID</label>
+    <input type="number" class="form-control form-control-lg" [(ngModel)]="formData.candidateId" placeholder="Enter candidate id">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Interviewer ID</label>
+    <input type="number" class="form-control form-control-lg" [(ngModel)]="formData.interviewerId" placeholder="Enter interviewer id">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Date & Time</label>
+    <input type="datetime-local" class="form-control form-control-lg" [(ngModel)]="formData.startTime">
+  </div>
+
+  <button class="btn submit-btn w-100" (click)="submit()">Book Slot</button>
+</section>
